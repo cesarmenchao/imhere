@@ -8,6 +8,10 @@ export default function Home() {
     console.log("Você clicou para adicionar");
   }
 
+  function handleParticipantRemove(name: string) {
+    console.log(`Você clicou para remover o participante ${name}`);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>React native</Text>
@@ -23,10 +27,10 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant />
-      <Participant />
-      <Participant />
-      <Participant />
+      <Participant
+        name="Cesar"
+        onRemove={() => handleParticipantRemove("cesar")}
+      />
     </View>
   );
 }
